@@ -43,53 +43,61 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
    cd worklab
 
 2. Instale as dependências do backend:
-
+    ```bash
     cd worklab-backend
     npm install
 
 3. Instale as dependências do frontend:
-
+   ```bash
    cd ../worklab-frontend
    npm install
 
 ##    Execução / Rodando o Backend
 
 1. Acesse a pasta do backend:
+   ```bash
    cd worklab-backend
 
-2. Inicie o servidor:
+3. Inicie o servidor:
+   ```bash
    npm start
 
-3. O backend estará rodando em: http://localhost:5000   
+4. O backend estará rodando em: http://localhost:5000   
 
 
 ## Execução / Rodando o Frontend
 
 1. Acesse a pasta do frontend:
+   ```bash
    cd worklab-frontend
 
-2. Inicie o frontend:
+3. Inicie o frontend:
+   ```bash
    npm start
 
-3. A aplicação estará acessível em: http://localhost:3001
+4. A aplicação estará acessível em: http://localhost:3001
 
 
 ## Execuçãp / Rodando Tudo Junto
 
 1. No diretório principal (worklab), instale o concurrently:
+   ```bash
    npm install concurrently --save-dev
 
-2. No arquivo package.json da pasta principal, adicione o script ou veja se já está configurado, para rodar os dois servidores:
-   "scripts": {
+3. No arquivo package.json da pasta principal, adicione o script ou veja se já está configurado, para rodar os dois servidores:
+
+   
+    "scripts": {
   "start": "concurrently \\"cd worklab-backend && npm start\\" \\"cd worklab-frontend && npm start\\""
 }
 
-3. Inicie ambos os servidores:
+4. Inicie ambos os servidores:
+   ```bash
    npm start
 
-4. O backend estará em http://localhost:5000 e o frontend em http://localhost:3001
+5. O backend estará em http://localhost:5000 e o frontend em http://localhost:3001
 
-5. funcionando na porta http://localhost:3001.
+6. funcionando na porta http://localhost:3001.
 
 ## Funcionalidades
 
@@ -114,7 +122,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
    Visualize os exames vinculados a um paciente específico.
 
 ## Estrutura de Pastas
-
+```bash
    worklab/
 ├── worklab-backend/       # Código do backend (API Express.js)
 │   ├── index.js           # Arquivo principal do servidor
