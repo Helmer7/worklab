@@ -87,9 +87,9 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 3. No arquivo package.json da pasta principal, adicione o script ou veja se já está configurado, para rodar os dois servidores:
 
    
-    "scripts": {
-  "start": "concurrently \\"cd worklab-backend && npm start\\" \\"cd worklab-frontend && npm start\\""
-}
+        "scripts": {
+       "start": "concurrently \\"cd worklab-backend && npm start\\" \\"cd worklab-frontend && npm start\\""
+       }
 
 4. Inicie ambos os servidores:
    ```bash
