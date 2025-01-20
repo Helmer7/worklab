@@ -8,6 +8,9 @@ Worklab é um sistema simples para gerenciar pacientes e exames, desenvolvido ut
 2. [Pré-requisitos](#pré-requisitos)
 3. [Configuração do Projeto](#configuração-do-projeto)
 4. [Execução](#execução)
+   - [Rodando Backend](#rodando-o-backend)
+   - [Rodando Frontend](#rodando-o-frontend)
+   - [Rodando Tudo Junto](#rodando-tudo-junto)
 5. [Funcionalidades](#funcionalidades)
 6. [Estrutura de Pastas](#estrutura-de-pastas)
 7. [Contribuição](#contribuição)
@@ -17,15 +20,15 @@ Worklab é um sistema simples para gerenciar pacientes e exames, desenvolvido ut
 
 ## Introdução
 
-Este projeto permite o gerenciamento de pacientes e exames. Ele é dividido em duas partes principais:
-- **Backend**: Responsável por processar as requisições, gerenciar os dados e fornecer APIs.
-- **Frontend**: Interface para os usuários interagirem com o sistema.
+O **Worklab** é uma aplicação voltada para o gerenciamento de pacientes e exames médicos, composta por:
+- **Backend**: API para manipulação de dados de pacientes e exames.
+- **Frontend**: Interface interativa para cadastro, edição e relatórios.
 
 ---
 
 ## Pré-requisitos
 
-Certifique-se de que as seguintes ferramentas estão instaladas no seu computador:
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 - [Node.js](https://nodejs.org) (v14 ou superior)
 - [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
 - [Git](https://git-scm.com/)
@@ -34,74 +37,108 @@ Certifique-se de que as seguintes ferramentas estão instaladas no seu computado
 
 ## Configuração do Projeto
 
-1. Clone o repositório:
-
+1. Clone este repositório:
    ```bash
    git clone https://github.com/seu-usuario/worklab.git
    cd worklab
 
 2. Instale as dependências do backend:
 
-   cd worklab-backend
-   npm install
+    cd worklab-backend
+    npm install
 
 3. Instale as dependências do frontend:
-   
+
    cd ../worklab-frontend
    npm install
 
-## Execução / Rodando o backend
+##    Execução / Rodando o Backend
 
 1. Acesse a pasta do backend:
-  
    cd worklab-backend
 
 2. Inicie o servidor:
-   
    npm start
 
-3. O backend estará rodando em: http://localhost:3000
+3. O backend estará rodando em: http://localhost:5000   
 
 
 ## Execução / Rodando o Frontend
 
 1. Acesse a pasta do frontend:
-   
    cd worklab-frontend
 
 2. Inicie o frontend:
-
    npm start
 
 3. A aplicação estará acessível em: http://localhost:3001
 
 
-## Execução / Instalar o Concurrently / funcionando tudo junto
+## Execuçãp / Rodando Tudo Junto
 
-1. No terminal, dentro do diretório principal do projeto (Onde estão as pastas Front e Back) instale o pacote: 
-
+1. No diretório principal (worklab), instale o concurrently:
    npm install concurrently --save-dev
 
-2. A aplicação estará acessível em: http://localhost:3001
+2. No arquivo package.json da pasta principal, adicione o script ou veja se já está configurado, para rodar os dois servidores:
+   "scripts": {
+  "start": "concurrently \\"cd worklab-backend && npm start\\" \\"cd worklab-frontend && npm start\\""
+}
+
+3. Inicie ambos os servidores:
+   npm start
+
+4. O backend estará em http://localhost:5000 e o frontend em http://localhost:3001
+
+5. funcionando na porta http://localhost:3001.
 
 ## Funcionalidades
 
 1. Cadastro de Pacientes:
-   
-   Nome completo, sexo, e-mail e celular.
+
+   Informações: Nome completo, sexo, e-mail e celular.
 
 2. Cadastro de Exames:
 
-   Código, descrição e valor.
+   Informações: Código, descrição e valor.
 
-3. Vincular Exame a Paciente:
+3.Vincular Exame a Paciente:
 
-   Seleção de paciente e código do exame.
+   Seleção de um paciente e código do exame.
 
-4. Editar e Excluir Pacientes.
+4. Editar e Excluir Pacientes:
+
+   Atualize ou remova registros de pacientes existentes.
 
 5. Relatórios de Pacientes com Exames:
-   
-   Exibe os exames vinculados a um paciente.
 
+   Visualize os exames vinculados a um paciente específico.
+
+## Estrutura de Pastas
+
+   worklab/
+├── worklab-backend/       # Código do backend (API Express.js)
+│   ├── index.js           # Arquivo principal do servidor
+│   ├── package.json       # Dependências do backend
+│   ├── database.sqlite    # Banco de dados SQLite
+│   └── ...
+├── worklab-frontend/      # Código do frontend (React)
+│   ├── src/               # Código-fonte do React
+│   ├── public/            # Arquivos públicos (HTML, ícones)
+│   ├── package.json       # Dependências do frontend
+│   └── ...
+└── package.json           # Configuração principal para rodar os dois servidores
+
+
+
+## Contribuição // Contribuições são bem-vindas! Siga estas etapas:
+
+1. Faça um fork do projeto.
+
+2. Crie uma nova branch: git checkout -b minha-feature.
+
+3. Faça suas alterações e commit: git commit -m 'Adicionei uma nova feature'.
+
+4. Envie para o repositório remoto: git push origin minha-feature.
+
+5. Abra um Pull Request no GitHub.
 
