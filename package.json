@@ -1,0 +1,14 @@
+{
+  "name": "worklab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start-backend": "cd worklab-backend && npm start",
+    "start-frontend": "cd worklab-frontend && npm start",
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "worklab": "file:"
+  }
+}
