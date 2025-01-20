@@ -39,7 +39,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/worklab.git
+   git clone https://github.com/Helmer7/worklab.git
    cd worklab
 
 2. Instale as dependências do backend:
